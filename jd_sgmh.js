@@ -53,7 +53,7 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
 		return;
 	}
 
-	$.newShareCodes = [];
+	$.newShareCodes = ["T0225KkcRxoQ8FSDKEumnPYOdgCjVQmoaT5kRrbA", "T0225KkcRRpIpgHRKB6llqRfcACjVQmoaT5kRrbA"];
 	console.log(`开始获取助力码....\n`);
 	for (let i = 0; i < cookiesArr.length; i++) {
 		cookie = cookiesArr[i];

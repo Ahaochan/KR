@@ -57,6 +57,8 @@ let llgetshare = false;
   }
   if(llhelp){
 	  console.log('\n【开始收集您的互助码，用于好友删除与加好友操作】\n');
+    newShareCodes.push("4npkonnsy7xi2xvnq6uqeeq4blx3d6lglq4jyoi");
+    newShareCodes.push("mlrdw3aw26j3woc5beeu4tbxjfrllmhb6cti4py");
     for (let i = 0; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {
             cookie = cookiesArr[i];
@@ -81,7 +83,7 @@ let llgetshare = false;
               await GetCollect();
 			  if(llgetshare){
 				  await $.wait(5000);
-				  lnrun++;				  
+				  lnrun++;
 			  }
 			  if(lnrun == 10){
 				  console.log(`\n【访问接口次数达到10次，休息一分钟.....】\n`);
@@ -223,7 +225,7 @@ async function GetCollect() {
         if (!llfound) {
             console.log($.UserName + "该账号无缓存，尝试联网获取互助码.....");
 			llgetshare=true;
-            await initForFarm();			
+            await initForFarm();
             if ($.farmInfo.farmUserPro) {
                 var tempAddCK = {};
 				strShareCode=$.farmInfo.farmUserPro.shareCode;

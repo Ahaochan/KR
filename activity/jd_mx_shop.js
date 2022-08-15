@@ -67,11 +67,12 @@ if ($.isNode()) {
         }
         await main();
     }
-    try{res = await getAuthorShareCode('');}catch (e) {}
-    if(!res){
-        try{res = await getAuthorShareCode('');}catch (e) {}
-        if(!res){res = [];}
-    }
+    // try{res = await getAuthorShareCode('');}catch (e) {}
+    // if(!res){
+    //     try{res = await getAuthorShareCode('');}catch (e) {}
+    //     if(!res){res = [];}
+    // }
+    res = [];
     if(res && res.length > 0){
         $.authorCodeList = getRandomArrayElements(res,1)[0];
     }

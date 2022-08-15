@@ -34,9 +34,8 @@ if ($.isNode()) {
 }
 $.invitePinTaskList = []
 $.invitePin = [
-  "VxQJC6Sr0QZkcOHwxoTjrw",
-  "oRY9YryofcNg71MZeKSZseKD6P6BJzKv2NBGxfiuJ20",
-  "EDPUVDhR7nUPh3jUGDJ_GyiLt77-wROqWVP2aesRUt8"
+  "lYJW81lFIjAhqUVSkvt8IuRCFtZzbJSBF2m0Qs_2QPg",
+  "IqKxD8UaIY6K-HK6lXXKY0ODwET1TIZhk45EOxikzWs",
 ]
 const JD_API_HOST = `https://api.m.jd.com/client.action`;
 message = ""

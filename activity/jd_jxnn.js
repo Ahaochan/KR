@@ -63,8 +63,8 @@ if ($.isNode()) {
         // await drawUserTask();
     }
     shareCodes = shareCodes.filter(code => code)
-    const author = Math.random() > 0.5 ? 'KingRan521' : 'KingRan521'
-    await getShareCode('nnfls.json', author, 3, true)
+    // const author = Math.random() > 0.5 ? '' : ''
+    // await getShareCode('nnfls.json', author, 3, true)
     shareCodes = [...new Set([...shareCodes, ...($.shareCode || [])])];
     if (shareCodes.length > 0) {
         console.log(`\n开始互助\n`);
@@ -100,7 +100,7 @@ if ($.isNode()) {
 
 })().catch((e) => { $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '') }).finally(() => { $.done(); })
 
-function getShareCode(name, author = 'KingRan521', num = -1, shuffle = false) {
+function getShareCode(name, author = '', num = -1, shuffle = false) {
     return new Promise(resolve => {
         $.get({
             url: `https://gitee.com/${author}/JD-Scripts/raw/master/shareCodes/${name}`,

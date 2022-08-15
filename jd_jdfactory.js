@@ -240,7 +240,9 @@ async function algorithm() {
   })
 }
 async function helpFriends() {
-  $.newShareCode = [...(jdFactoryShareArr || [])]  
+  // "T0225KkcRxoQ8FSDKEumnPYOdgCjVWnYaS5kRrbA",
+  // "T0225KkcRRpIpgHRKB6llqRfcACjVWnYaS5kRrbA",
+  $.newShareCode = [...(jdFactoryShareArr || [])]
   for (let code of $.newShareCode) {
     if (!code) continue
     const helpRes = await jdfactory_collectScore(code);

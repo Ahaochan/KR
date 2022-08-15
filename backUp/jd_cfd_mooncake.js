@@ -83,7 +83,8 @@ if ($.isNode()) {
       await $.wait(2000);
     }
   }
-  let res = await getAuthorShareCode('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/cfd.json')
+  // let res = await getAuthorShareCode('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/cfd.json')
+  let res = [];
   $.strMyShareIds = [...(res || [])]
   await shareCodesFormat()
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -644,8 +645,8 @@ function readShareCode() {
           //console.log(`${$.name} readShareCode API请求失败，请检查网路重试`)
         } else {
           if (data) {
-            console.log(`\n随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
-            data = JSON.parse(data);
+            // console.log(`\n随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
+            // data = JSON.parse(data);
           }
         }
       } catch (e) {

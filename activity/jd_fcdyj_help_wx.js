@@ -24,7 +24,8 @@ cron "1 1,18 * * *" script-path=https://raw.githubusercontent.com/KingRan/JDJB/m
 const $ = new Env('发财大赢家微信助力');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-const dyjCode = $.isNode() ? (process.env.dyjCode ? process.env.dyjCode : null) : null //邀请码变量，不支持多账号，格式：redEnvelopeId@markedPin
+// const dyjCode = $.isNode() ? (process.env.dyjCode ? process.env.dyjCode : null) : null //邀请码变量，不支持多账号，格式：redEnvelopeId@markedPin
+const dyjCode = 'bd4530dd7ff04a098913434603a5909192321636244498838@TkJlwF1aHX5wcdK1MFC8n-_YzZ2H7x_0mE7_Xgy75RU'
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [],
     cookie = '';
@@ -81,7 +82,7 @@ const JD_API_HOST = `https://api.m.jd.com`;
         }
     }
     if (new Date().getHours() >= 10) {
-        await getAuthorShareCode()
+        // await getAuthorShareCode()
         if ($.authorCode && $.authorCode.length) {
             for (let i = 0; i < cookiesArr.length; i++) {
                 cookie = cookiesArr[i];
@@ -307,7 +308,8 @@ function help(rid, inviter, type) {
 function getAuthorShareCode() {
     return new Promise(resolve => {
         $.get({
-            url: "https://raw.githubusercontent.com/KingRan/jd/main/shareCodes/dyj.json",
+            // url: "https://raw.githubusercontent.com/KingRan/jd/main/shareCodes/dyj.json",
+            url: "",
             headers: {
                 "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
             }
@@ -317,7 +319,7 @@ function getAuthorShareCode() {
                     //console.log(`${JSON.stringify(err)}`);
                     //console.log(`${$.name} API请求失败，请检查网路重试`);
                 } else {
-                    $.authorCode = JSON.parse(data);
+                    // $.authorCode = JSON.parse(data);
                 }
             } catch (e) {
                 $.logErr(e, resp)

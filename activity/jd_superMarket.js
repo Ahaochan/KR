@@ -117,7 +117,7 @@ async function drawLottery() {
   console.log(`\n注意⚠:东东超市抽奖已改版,花费500蓝币抽奖一次,现在脚本默认已关闭抽奖功能\n`);
   drawLotteryFlag = $.getdata('jdSuperMarketLottery') ? $.getdata('jdSuperMarketLottery') : drawLotteryFlag;
   if ($.isNode() && process.env.SUPERMARKET_LOTTERY) {
-    drawLotteryFlag = process.env.SUPERMARKET_LOTTERY;
+    drawLotteryFlag = process.env.SUPERMARKET_LOTTERY || 'true';
   }
   if (`${drawLotteryFlag}` === 'true') {
     const smtg_lotteryIndexRes = await smtg_lotteryIndex();
@@ -307,8 +307,8 @@ function receiveBlueCoin(timeout = 0) {
   })
 }
 async function daySign() {
-  const signDataRes = await smtgSign({"shareId":"QcSH6BqSXysv48bMoRfTBz7VBqc5P6GodDUBAt54d8598XAUtNoGd4xWVuNtVVwNO1dSKcoaY3sX_13Z-b3BoSW1W7NnqD36nZiNuwrtyO-gXbjIlsOBFpgIPMhpiVYKVAaNiHmr2XOJptu14d8uW-UWJtefjG9fUGv0Io7NwAQ","channel":"4"});
-  await smtgSign({"shareId":"TBj0jH-x7iMvCMGsHfc839Tfnco6UarNx1r3wZVIzTZiLdWMRrmoocTbXrUOFn0J6UIir16A2PPxF50_Eoo7PW_NQVOiM-3R16jjlT20TNPHpbHnmqZKUDaRajnseEjVb-SYi6DQqlSOioRc27919zXTEB6_llab2CW2aDok36g","channel":"4"});
+  const signDataRes = await smtgSign({"shareId":"","channel":"4"});
+  await smtgSign({"shareId":"","channel":"4"});
   if (signDataRes && signDataRes.code === 0) {
     const signList = await smtgSignList();
     if (signList.data.bizCode === 0) {
@@ -361,7 +361,7 @@ async function businessCircleActivity() {
     if (joinStatus === 0) {
       if (joinPkTeam === 'true') {
         console.log(`\n注：PK会在每天的七点自动随机加入作者创建的队伍\n`)
-        await updatePkActivityIdCDN('https://cdn.jsdelivr.net/gh/gitupdate/updateTeam@master/shareCodes/jd_updateTeam.json');
+        // await updatePkActivityIdCDN('https://cdn.jsdelivr.net/gh/gitupdate/updateTeam@master/shareCodes/jd_updateTeam.json');
         console.log(`\nupdatePkActivityId[pkActivityId]:::${$.updatePkActivityIdRes && $.updatePkActivityIdRes.pkActivityId}`);
         console.log(`\n京东服务器返回的[pkActivityId] ${pkActivityId}`);
         if ($.updatePkActivityIdRes && ($.updatePkActivityIdRes.pkActivityId === pkActivityId)) {
@@ -1673,7 +1673,8 @@ async function helpAuthor() {
 // }
 
 async function bigWinner() {
-  let res = await getAuthorShareCode2('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/fcdyj.json')
+  // let res = await getAuthorShareCode2('')
+  let res = []
   $.codeList = getRandomArrayElements([...(res || [])], [...(res || [])].length);
   for (let vo of $.codeList) {
     if (!vo['inviter']) continue

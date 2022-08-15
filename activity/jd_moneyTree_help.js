@@ -178,7 +178,7 @@ function help(sharePin) {
               $.isLogin = true;
               if (res.resultData.data) {
                 userInfo = res.resultData.data;
-             
+
                 if (userInfo.realName) {
                   if (!userInfo.treeInfo.workerSum) {
                     $.canRun = false;
@@ -260,16 +260,17 @@ function shareCodesFormat() {
   return new Promise(async resolve => {
     $.newShareCodes = [];
     let inviteCodes = [
-      'vLENq1IrJJAHtgSG42oVtQ@yXY3Cgtc3IR77UphNEyig8AdoUJQ3Dik@zePwdYsVecOsUQaf2b72AcAdoUJQ3Dik',
-      'vLENq1IrJJAHtgSG42oVtQ@yXY3Cgtc3IR77UphNEyig8AdoUJQ3Dik@zePwdYsVecOsUQaf2b72AcAdoUJQ3Dik'
     ];
     if ($.shareCodesArr[$.index - 1]) {
       $.newShareCodes = $.shareCodesArr[$.index - 1].split('@');
     } else {
       console.log(`由于您第${$.index}个京东账号未提供shareCode,将为本脚本作者助力\n`)
-      const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
-      $.newShareCodes = inviteCodes[tempIndex].split('@');
+      // const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
+      // $.newShareCodes = inviteCodes[tempIndex].split('@');
     }
+    $.newShareCodes = [...new Set([...$.newShareCodes, ...([
+      "jeU8Mo8y7sWPS6-ZmvueGsAdoUJQ3Dik",
+    ])])];
     console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify($.newShareCodes)}`)
     resolve();
   })

@@ -110,7 +110,8 @@ if ($.isNode()) {
     await pasture();
     await $.wait(2000);
   }
-  $.res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/KingRan/shareCodes@master/jxmc.json')
+  // $.res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/KingRan/shareCodes@master/jxmc.json')
+  $.res = []
   await shareCodesFormat()
   for (let i = 0; i < cookiesArr.length; i++) {
     $.cookie = cookiesArr[i];
@@ -903,12 +904,17 @@ function getAuthorShareCode(url) {
 function shareCodesFormat() {
   return new Promise(async resolve => {
     $.newShareCodes = []
-    const readShareCodeRes = await readShareCode();
+    // const readShareCodeRes = await readShareCode();
+    const readShareCodeRes = null;
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       $.newShareCodes = [...new Set([...$.inviteCodeList, ...($.res || []), ...(readShareCodeRes.data || [])])];
     } else {
       $.newShareCodes = [...new Set([...$.inviteCodeList, ...($.res || [])])];
     }
+    $.newShareCodes = [...new Set([...$.newShareCodes, ...([
+      "g_eiitD1h9-a-PX-GytKiGrfw77E3iG0LpMlIb2JHcbcbMpfkVQPLnlNxOatd--C2gstq0419Nud8Kp310uBYw",
+      "g_eiitD1h9-a-PX-GytKiGrfw77E3iG0LpMlIb2JHcauH7lwHZKEtMIX3P_OOjZQZA7eUhQYQD5zIwq_wTxBJg",
+    ])])];
     console.log(`\n您将要助力的好友${JSON.stringify($.newShareCodes)}`)
     resolve();
   })

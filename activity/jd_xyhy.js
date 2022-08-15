@@ -40,7 +40,7 @@ if ($.isNode()) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
-	console.log(`\n入口：https://lzdz1-isv.isvjcloud.com/dingzhi/tiger/gold/activity/15725835?activityId=dz2201100014002401&shareUuid=78d52d2b13af4861b6f6e2012c21cc11\n`);
+	console.log(`\n入口：https://lzdz1-isv.isvjcloud.com/dingzhi/tiger/gold/activity/15725835?activityId=dz2201100014002401&shareUuid=defeb1a5f4dc48399841c943a5a1d1d1\n`);
     for (let i = 0; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {
             cookie = cookiesArr[i]
@@ -56,7 +56,7 @@ if ($.isNode()) {
                 continue
             }
             authorCodeList = [
-                '78d52d2b13af4861b6f6e2012c21cc11',
+                'defeb1a5f4dc48399841c943a5a1d1d1',
             ]
             $.bean = 0;
             $.ADID = getUUID('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 1);

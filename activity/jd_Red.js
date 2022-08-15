@@ -141,9 +141,9 @@ let timeH = $.time('H')
   }
   if(Object.getOwnPropertyNames($.shareCodeArr).length > 0 && $.shareCodeArr["updateTime"] != pinUpdateTime) $.setdata($.shareCodeArr,'jd_JDnhjRed')
   if(message){
-    $.msg($.name, ``, `${message}\nhttps://u.jd.com/PC8TEnS\n\n跳转到app 可查看助力情况`);
+    $.msg($.name, ``, `${message}\nhttps://u.jd.com/SMiIAWp\n\n跳转到app 可查看助力情况`);
     if ($.isNode()){
-      // await notify.sendNotify(`${$.name}`, `${message}\n\nhttps://u.jd.com/PC8TEnS\n跳转到app 可查看助力情况`);
+      // await notify.sendNotify(`${$.name}`, `${message}\n\nhttps://u.jd.com/SMiIAWp\n跳转到app 可查看助力情况`);
     }
   }
 })()
@@ -152,7 +152,7 @@ let timeH = $.time('H')
 
 async function run(type = 0){
   try{
-    rebateCodes = ["PC8TEnS", "PC8pEWg", "Pd8B3sJ"];
+    rebateCodes = ["SMiIAWp"];
     rebateCodes = rebateCodes[Math.floor((Math.random() * rebateCodes.length))]
     rebateCodes = $.isNode() ? (process.env.jd_rebateCode ? process.env.jd_rebateCode : `${rebateCodes}`) : ($.getdata('jd_rebateCode') ? $.getdata('jd_rebateCode') : `${rebateCodes}`);
     rebateCode = rebateCodes

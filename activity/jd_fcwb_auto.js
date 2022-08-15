@@ -79,8 +79,9 @@ if ($.isNode()) {
     }
 
 
-    const url = `https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/fcwb.json`
-    const author = await getAuthorShareCode(url)
+    // const url = `https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/fcwb.json`
+    // const author = await getAuthorShareCode(url)
+    const author = null;
     if (author) {
         if (author.fcwbinviteCode && author.fcwbinviter) {
             inviteCodes.push({

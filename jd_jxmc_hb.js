@@ -62,7 +62,7 @@ let token ='';
   }
   if (process.env.JXMC_RP != 'false' && flag_hb) {
   console.log('\n##################开始账号内互助(红包)#################\n');
-  await getShareCode('jxmc_hb.json')
+  // await getShareCode('jxmc_hb.json')
   $.inviteCodeList_hb = [...($.inviteCodeList_hb || []), ...($.shareCode || [])]
   for(let i = 0;i<$.helpCkList.length;i++){
     $.can_help = true
@@ -82,7 +82,7 @@ let token ='';
   }
   console.log('\n##################开始账号内互助#################\n');
   $.shareCode = undefined
-  await getShareCode('jxmc.json')
+  // await getShareCode('jxmc.json')
   let newCookiesArr = [];
   for(let i = 0;i<$.helpCkList.length;i+=4){
     newCookiesArr.push($.helpCkList.slice(i,i+4))

@@ -43,10 +43,6 @@ let tuanActiveId = ``, hasSend = false;
 const jxOpenUrl = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://wqsd.jd.com/pingou/dream_factory/index.html%22%20%7D`;
 let cookiesArr = [], cookie = '', message = '', allMessage = '', jdDreamFactoryShareArr = [];
 const newShareCodes = [
-  'urGPT1c0ITHN7W2XFqSKTg==',
-  'XGv-W12NaJeargxyJ9M5Rg==',
-  'Q2qrDiqp70N5yic3BGvcOQ==',
-  'SgVsBMPJ0CDXKbbPSoF3xg=='
 ];
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 $.tuanIds = [];
@@ -132,6 +128,10 @@ async function helpFriends() {
   }
   if ($.canHelpFlag) {
       $.newShareCode = [...(jdDreamFactoryShareArr || []), ...(newShareCodes || [])]
+      $.newShareCode = [...new Set([...([
+        "d-n0d2eZTWz-aNH4wV_VHw==",
+        "o6nIgniQVWdhicSnqcqgpg==",
+      ]), ...($.newShareCode || [])])];
     for (let code of $.newShareCode) {
       if (code) {
         if ($.encryptPin === code) {

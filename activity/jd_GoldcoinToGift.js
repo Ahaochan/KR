@@ -63,7 +63,8 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
       await GoldcoinToGift()
     }
   }
-  let res = await getAuthorShareCode('')
+  // let res = await getAuthorShareCode('')
+  let res = [];
   $.shareId = [...new Set([...$.shareId, ...(res || [])])]
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];

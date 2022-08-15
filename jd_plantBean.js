@@ -70,7 +70,7 @@ let lnrun = 0;
       message = '';
       subTitle = '';
       option = {};
-	  lnrun++;	
+	  lnrun++;
       await jdPlantBean();
 	  if(lnrun == 3){
 		  console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);
@@ -632,6 +632,8 @@ async function helpShare(plantUuid) {
 async function plantBeanIndex() {
   $.plantBeanIndexResult = await request('plantBeanIndex');//plantBeanIndexBody
 }
+// "4npkonnsy7xi2xvnq6uqeeq4blx3d6lglq4jyoi",
+//     "mlrdw3aw26j3woc5beeu4tbxjfrllmhb6cti4py",
 function requireConfig() {
   return new Promise(resolve => {
     //console.log('开始获取种豆得豆配置文件\n')
@@ -651,7 +653,10 @@ function requireConfig() {
       cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
     }
     console.log(`共${cookiesArr.length}个京东账号\n`)
-    $.shareCodesArr = [];
+    $.shareCodesArr = [
+      "4npkonnsy7xi2xvnq6uqeeq4blx3d6lglq4jyoi",
+      "mlrdw3aw26j3woc5beeu4tbxjfrllmhb6cti4py",
+    ];
     if ($.isNode()) {
       Object.keys(jdPlantBeanShareCodes).forEach((item) => {
         if (jdPlantBeanShareCodes[item]) {
@@ -660,10 +665,10 @@ function requireConfig() {
       })
     } else {
       if ($.getdata('jd_plantbean_inviter')) $.shareCodesArr = $.getdata('jd_plantbean_inviter').split('\n').filter(item => !!item);
-      //console.log(`\nBoxJs设置的${$.name}好友邀请码:${$.getdata('jd_plantbean_inviter') ? $.getdata('jd_plantbean_inviter') : '暂无'}\n`);
+      console.log(`\nBoxJs设置的${$.name}好友邀请码:${$.getdata('jd_plantbean_inviter') ? $.getdata('jd_plantbean_inviter') : '暂无'}\n`);
     }
-    // console.log(`\n种豆得豆助力码::${JSON.stringify($.shareCodesArr)}`);
-    //console.log(`您提供了${$.shareCodesArr.length}个账号的种豆得豆助力码\n`);
+    console.log(`\n种豆得豆助力码::${JSON.stringify($.shareCodesArr)}`);
+    console.log(`您提供了${$.shareCodesArr.length}个账号的种豆得豆助力码\n`);
     resolve()
   })
 }

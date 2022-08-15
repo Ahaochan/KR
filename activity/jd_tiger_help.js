@@ -66,10 +66,11 @@ Object.keys(jdCookieNode).forEach((item) => {
         }
     }
     let authorCode = []
-    let res = await getAuthorShareCode('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/tiger.json')
-    if (!res) {
-        res = await getAuthorShareCode('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/tiger.json')
-    }
+    // let res = await getAuthorShareCode('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/tiger.json')
+    // if (!res) {
+    //     res = await getAuthorShareCode('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/tiger.json')
+    // }
+    let res = [];
     if (res) {
         authorCode = res.sort(() => 0.5 - Math.random())
         const limit = 3
@@ -196,7 +197,7 @@ async function getShareCodePool(key, num) {
         try {
             const { body } = await got(``)
             //console.debug('getShareCodePool:', body)
-            shareCode = JSON.parse(body).data || []
+            // shareCode = JSON.parse(body).data || []
             console.log(`随机获取${num}个${key}成功：${JSON.stringify(shareCode)}`)
             if (shareCode.length !== 0) {
                 break

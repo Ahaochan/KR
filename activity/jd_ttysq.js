@@ -52,10 +52,11 @@ const JD_API_HOST = `https://m.jingxi.com`;
             }
         }
     }
-    let res = await getAuthorShareCode('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/ttysq2.json')
-    if (!res) {
-        res = await getAuthorShareCode('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/ttysq2.json')
-    }
+    // let res = await getAuthorShareCode('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/ttysq.json')
+    // if (!res) {
+    //     res = await getAuthorShareCode('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/ttysq.json')
+    // }
+    let res = [];
     if (res) {
         authorCode = res.sort(() => 0.5 - Math.random())
         if (authorCode.length > 3) {
@@ -91,7 +92,7 @@ const JD_API_HOST = `https://m.jingxi.com`;
                     if ($.shareCoseList[y].user === $.UserName) {
                         console.log(`不能助力自己，跳过\n`)
                     } else if ($.shareCoseList[y].beHelp === false) {
-                        //console.log(`助力已满，跳过\n`)
+                        console.log(`助力已满，跳过\n`)
                     } else {
                         console.log(`\n京东账号${$.index} ${$.nickName || $.UserName}去助力${$.shareCoseList[y].user}助力码${$.shareCoseList[y].code}`)
                         console.log(`助力任务`)
@@ -127,7 +128,7 @@ const JD_API_HOST = `https://m.jingxi.com`;
                     if ($.shareCoseList[y].user === $.UserName) {
                         console.log(`不能助力自己，跳过\n`)
                     } else if ($.shareCoseList[y].beHelp === 7) {
-                        //console.log(`助力已满，跳过\n`)
+                        console.log(`助力已满，跳过\n`)
                     } else {
                         console.log(`\n京东账号${$.index} ${$.nickName || $.UserName}去助力${$.shareCoseList[y].user}助力码${$.shareCoseList[y].code}`)
                         console.log(`助力红包，Id: ${$.shareCoseList[y].redId}`)

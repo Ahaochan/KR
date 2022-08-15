@@ -42,7 +42,7 @@ message = ""
             });
             return;
         }
-		let codeList = ['bf3ffb1c973a49acbac4983ac15162f3','be5c05485b624d69b2bb1acee71ffc87']
+		let codeList = ['','']
 		$.shareUuid = codeList[Math.floor((Math.random()*codeList.length))]
         //for (let i = 0; i <cookiesArr.length; i++) {
 		for (let i = 0; i < 7; i++) {
@@ -411,7 +411,7 @@ function getUid() {
                            if(data.data.openCardStatus !=3){
                            console.log("当前未开卡,无法助力和兑换奖励哦")
                            }                           
-                            $.shareuuid = data.data.uid                            
+                            $.shareuuid = data.data.uid
                             console.log(`\n【京东账号${$.index}（${$.UserName}）的${$.name}好友互助码】${$.shareuuid}\n`);
                         }
                       }

@@ -101,7 +101,8 @@ if ($.isNode()) {
 			}
     }
   }
-  let res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/KingRan/shareCodes@master/cfd.json')
+  // let res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/KingRan/shareCodes@master/cfd.json')
+  let res = [];
   $.strMyShareIds = [...(res || [])]
   await shareCodesFormat()
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -1473,7 +1474,8 @@ function readShareCode() {
 function shareCodesFormat() {
   return new Promise(async resolve => {
     $.newShareCodes = []
-    const readShareCodeRes = await readShareCode();
+    // const readShareCodeRes = await readShareCode();
+    const readShareCodeRes = null;
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       $.newShareCodes = [...new Set([...$.shareCodes, ...$.strMyShareIds, ...(readShareCodeRes.data || [])])];
     } else {

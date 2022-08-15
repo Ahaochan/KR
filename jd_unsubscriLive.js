@@ -91,7 +91,8 @@ if ($.isNode()) {
     }
     if (allMessage) {
         allMessage = allMessage.substring(0, allMessage.length - 1)
-        if ($.isNode() && (process.env.CASH_NOTIFY_CONTROL ? process.env.CASH_NOTIFY_CONTROL === 'false' : !!1)) await notify.sendNotify($.name, allMessage);
+        console.log(allMessage)
+        // if ($.isNode() && (process.env.CASH_NOTIFY_CONTROL ? process.env.CASH_NOTIFY_CONTROL === 'false' : !!1)) await notify.sendNotify($.name, allMessage);
     }
 })()
     .catch((e) => {

@@ -29,7 +29,8 @@ if ($.isNode()) {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let inviteCodes = ['-ryUIOlIHz8pFW-aNYmbu25LXdjYhUQ','-ryUHNZWDj0XHnSeAr6au6OI-QOjSyY','-ryUXf5YM2dFZ0PNSdOWoX0yOa5Pm_-w','-ryUX6ReZmdLNhOXTonC_uKcEzo0GDs2']
+let inviteCodes = [
+]
 $.shareCodesArr = [];
 
 !(async () => {
@@ -333,7 +334,7 @@ function city_lotteryAward() {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `https://jd.smiek.tk/city`, 'timeout': 10000}, (err, resp, data) => {
+    $.get({url: ``, 'timeout': 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -365,10 +366,10 @@ function shareCodesFormat() {
     }
     if($.index == 1) $.newShareCodes = [...inviteCodes,...$.newShareCodes]
     try{
-      const readShareCodeRes = await readShareCode();
-      if (readShareCodeRes && readShareCodeRes.code === 200) {
-        $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
-      }
+      // const readShareCodeRes = await readShareCode();
+      // if (readShareCodeRes && readShareCodeRes.code === 200) {
+      //   $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
+      // }
     } catch (e) {
       console.log(e);
     }

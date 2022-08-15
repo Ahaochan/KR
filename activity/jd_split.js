@@ -64,7 +64,8 @@ $.shareCodes = [];
       await jdSplit()
     }
   }
-  let res = await getAuthorShareCode('')
+  // let res = await getAuthorShareCode('')
+  let res = [];
   $.newShareCodes = [...new Set([...$.shareCodes, ...(res || [])])]
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];

@@ -24,7 +24,7 @@ if ($.isNode()) {
         return;
     }
     let res = [];
-    try{res = await getAuthorShareCode('');}catch (e) {}
+    // try{res = await getAuthorShareCode('');}catch (e) {}
     if(res.length > 0){
         $.shareUuid = getRandomArrayElements(res,1)[0];
     }

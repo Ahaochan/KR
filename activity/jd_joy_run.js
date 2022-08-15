@@ -50,11 +50,11 @@ const JD_BASE_API = `https://draw.jdfcloud.com//pet`;
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : {};
 //下面给出好友邀请助力的示例填写规则
-let invite_pins = ['jd_4bde364a938cf,jd_60dc140a5e778,jd_550be1dcf222d,jd_68b038e1c4b79,jd_uJjXidMVjxUo,jd_IutIkZFMnObn'];
+let invite_pins = [''];
 //下面给出好友赛跑助力的示例填写规则
-let run_pins = ['jd_4bde364a938cf,jd_60dc140a5e778,jd_550be1dcf222d,jd_68b038e1c4b79,jd_uJjXidMVjxUo,jd_IutIkZFMnObn'];
+let run_pins = [''];
 //friendsArr内置太多会导致IOS端部分软件重启,可PR过来(此处目的:帮别人助力可得30g狗粮)
-let friendsArr = ["jd_4bde364a938cf", "jd_60dc140a5e778", "jd_550be1dcf222d", "jd_68b038e1c4b79", "jd_uJjXidMVjxUo", "jd_IutIkZFMnObn"]
+let friendsArr = []
 
 
 //IOS等用户直接用NobyDa的jd cookie
@@ -125,14 +125,14 @@ async function main() {
     $.msg($.name, '【提示】请先获取来客有礼宠汪汪token', "iOS用户微信搜索'来客有礼'小程序\n点击底部的'发现'Tab\n即可获取Token");
     // return;
   }
-  await getFriendPins();
+  // await getFriendPins();
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       $.validate = '';
       // const zooFaker = require('./utils/JDJRValidator_Pure');
       // $.validate = await zooFaker.injectToRequest()
       if ($.isNode()) {
-        if (process.env.JOY_RUN_HELP_MYSELF) {
+        if (process.env.JOY_RUN_HELP_MYSELF || true) {
           console.log(`\n赛跑会先给账号内部助力,如您当前账户有剩下助力机会则为lx0301作者助力\n`)
           let my_run_pins = [];
           Object.values(jdCookieNode).filter(item => item.match(/pt_pin=([^; ]+)(?=;?)/)).map(item => my_run_pins.push(decodeURIComponent(item.match(/pt_pin=([^; ]+)(?=;?)/)[1])))
@@ -144,9 +144,10 @@ async function main() {
           run_pins = run_pins[0].split(',')
           Object.values(jdCookieNode).filter(item => item.match(/pt_pin=([^; ]+)(?=;?)/)).map(item => run_pins.push(decodeURIComponent(item.match(/pt_pin=([^; ]+)(?=;?)/)[1])))
           run_pins = [...new Set(run_pins)];
-          let fixPins = run_pins.splice(run_pins.indexOf('jd_550be1dcf222d'), 1);
-          fixPins.push(...run_pins.splice(run_pins.indexOf('jd_60dc140a5e778'), 1));
-          fixPins.push(...run_pins.splice(run_pins.indexOf('jd_4bde364a938cf'), 1));
+          let fixPins = [];
+          // let fixPins = run_pins.splice(run_pins.indexOf('jd_550be1dcf222d'), 1);
+          // fixPins.push(...run_pins.splice(run_pins.indexOf('jd_60dc140a5e778'), 1));
+          // fixPins.push(...run_pins.splice(run_pins.indexOf('jd_4bde364a938cf'), 1));
           const randomPins = getRandomArrayElements(run_pins, run_pins.length);
           run_pins = [[...fixPins, ...randomPins].join(',')];
           invite_pins = run_pins;
@@ -427,7 +428,7 @@ async function run(run_pins) {
       continue
     }
     const combatDetailRes = await combatDetail(item);
-    const { petRaceResult } = combatDetailRes.data;
+    const { petRaceResult } = combatDetailRes && combatDetailRes.data;
     console.log(`petRaceResult ${petRaceResult}`);
     if (petRaceResult === 'help_full') {
       console.log('您的赛跑助力机会已耗尽');
@@ -542,7 +543,7 @@ function getRandomArrayElements(arr, count) {
 function getFriendPins() {
   return new Promise(resolve => {
     $.get({
-      url: "https://cdn.jsdelivr.net/gh/Aaron-lv/updateTeam@master/friendPins.json",
+      url: "",
       headers:{
         "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
       },

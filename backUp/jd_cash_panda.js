@@ -216,7 +216,7 @@ async function appdoTask(type,taskInfo) {
   let functionId = 'cash_doTask'
   let body = {"type":type,"taskInfo":taskInfo}
   await $.wait(5000)
-  let sign = await getSignfromPanda(functionId, body)  
+  let sign = await getSignfromPanda(functionId, body)
 
   return new Promise((resolve) => {
     $.post(apptaskUrl(functionId, sign), (err, resp, data) => {
@@ -292,7 +292,7 @@ function getSignfromPanda(functionId, body) {
 				if (err) {
 					console.log(`衰仔，没有连接上熊猫服务，兄弟帮不了你啦！o(╥﹏╥)o`)
 				} else {
-					data = JSON.parse(data);				
+					data = JSON.parse(data);
 				if (data && data.code == 200) {
                     //lnrequesttimes = data.request_times;
                     //console.log("衰仔，连接熊猫服务成功(*^▽^*)，当前Token使用次数为:" + lnrequesttimes);
@@ -338,6 +338,34 @@ function showMsg() {
     resolve()
   })
 }
+//格式化助力码
+function shareCodesFormat() {
+  return new Promise(async resolve => {
+    // console.log(`第${$.index}个京东账号的助力码:::${$.shareCodesArr[$.index - 1]}`)
+    $.newShareCodes = [];
+    if ($.shareCodesArr[$.index - 1]) {
+      $.newShareCodes = $.shareCodesArr[$.index - 1].split('@');
+    } else {
+      console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
+      // const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
+      // $.newShareCodes = inviteCodes[tempIndex].split('@');
+      // let authorCode = deepCopy($.authorCode)
+      // $.newShareCodes = [...(authorCode.map((item, index) => authorCode[index] = item['inviteCode'])), ...$.newShareCodes];
+    }
+    // const readShareCodeRes = await readShareCode();
+    // if (readShareCodeRes && readShareCodeRes.code === 200) {
+    //   $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
+    // }
+    $.newShareCodes = [...new Set([...$.newShareCodes, ...([
+      "eU9Ya-i7Y_xy-T-Hw3IX1A",
+      "eU9YaejjNakg-WqEySBG0g",
+    ])])];
+    $.newShareCodes.map((item, index) => $.newShareCodes[index] = { "inviteCode": item, "shareDate": $.shareDate })
+    console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify($.newShareCodes)}`)
+    resolve();
+  })
+}
+
 function requireConfig() {
   return new Promise(resolve => {
     console.log(`开始获取${$.name}配置文件\n`);

@@ -77,7 +77,7 @@ let num;
             message = '';
             subTitle = '';
             option = {};
-            // await shareCodesFormat();
+            await shareCodesFormat();
             await jdPlantBean();
             await showMsg();
         }
@@ -567,7 +567,7 @@ function readShareCode() {
         } else {
           if (data) {
      //     console.log(`随机取个${randomCount}码放到您固定的互助码后面(不影响已有固定互助)`)
-            data = JSON.parse(data);
+     //     data = JSON.parse(data);
           }
         }
       } catch (e) {
@@ -589,13 +589,17 @@ function shareCodesFormat() {
       newShareCodes = $.shareCodesArr[$.index - 1].split('@');
     } else {
   //  console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
-      const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
-      newShareCodes = shareCodes[tempIndex].split('@');
+      //const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
+      //newShareCodes = shareCodes[tempIndex].split('@');
     }
     // const readShareCodeRes = await readShareCode();
     // if (readShareCodeRes && readShareCodeRes.code === 200) {
     //   newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])];
     // }
+     newShareCodes = [...new Set([...newShareCodes, ...([
+          "4npkonnsy7xi2xvnq6uqeeq4blx3d6lglq4jyoi",
+          "mlrdw3aw26j3woc5beeu4tbxjfrllmhb6cti4py",
+     ])])];
     console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify(newShareCodes)}`)
     resolve();
   })

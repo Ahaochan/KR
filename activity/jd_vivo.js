@@ -26,7 +26,7 @@ let shareList = [];
         return;
     }
     $.shareUuid = '';
-    let shareList = ['6391f12f69794d8c8225ed87e8e2640c'];
+    let shareList = [''];
     let activityList = [{'id':'2112100008586801','endTime':'1640966400000'}];
     for (let i = 0; i < cookiesArr.length; i++) {
         if(shareList.length > 0){

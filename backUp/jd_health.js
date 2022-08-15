@@ -24,9 +24,6 @@ const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
 const notify = $.isNode() ? require('./sendNotify') : "";
 let cookiesArr = [], cookie = "", allMessage = "", message;
 const inviteCodes = [
-  `T0225KkcRRsZpwHWdEmilvUIIACjVfnoaW5kRrbA@T0225KkcRRsZpwHWdEmilvUIIACjVfnoaW5kRrbA`,
-  `T0225KkcRRsZpwHWdEmilvUIIACjVfnoaW5kRrbA@T0225KkcRRsZpwHWdEmilvUIIACjVfnoaW5kRrbA`,
-  `T0225KkcRRsZpwHWdEmilvUIIACjVfnoaW5kRrbA@T0225KkcRRsZpwHWdEmilvUIIACjVfnoaW5kRrbA`,
 ]
 let reward = process.env.JD_HEALTH_REWARD_NAME ? process.env.JD_HEALTH_REWARD_NAME : ''
 const randomCount = $.isNode() ? 20 : 5;
@@ -344,7 +341,7 @@ function readShareCode() {
         } else {
           if (data) {
      //     console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
-            data = JSON.parse(data);
+     //       data = JSON.parse(data);
           }
         }
       } catch (e) {
@@ -366,13 +363,18 @@ function shareCodesFormat() {
       $.newShareCodes = $.shareCodesArr[$.index - 1].split('@');
     } else {
       console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
-      const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
-      $.newShareCodes = inviteCodes[tempIndex].split('@');
+      // const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
+      // $.newShareCodes = inviteCodes[tempIndex].split('@');
     }
-    const readShareCodeRes = await readShareCode();
+    // const readShareCodeRes = await readShareCode();
+    const readShareCodeRes = null;
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
     }
+    $.newShareCodes = [...new Set([...$.newShareCodes, ...([
+      "T0225KkcRxoQ8FSDKEumnPYOdgCjVfnoaW5kRrbA",
+      "T0225KkcRRpIpgHRKB6llqRfcACjVfnoaW5kRrbA",
+    ])])];
     console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify($.newShareCodes)}`)
     resolve();
   })

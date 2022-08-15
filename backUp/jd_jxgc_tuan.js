@@ -82,7 +82,7 @@ if ($.isNode()) {
     console.log(`需要开团的CK已过期，请更新CK后重新执行脚本`);
     return;
   }
-  await getAuthorShareCode();
+  // await getAuthorShareCode();
   console.log(`\n===============开始账号内参团===================`);
   console.log('获取到的内部团ID: '+`${$.tuanIds}\n`);
   //打乱CK,再进行参团
@@ -408,7 +408,7 @@ function tuanAward(activeId, tuanId, isTuanLeader = true) {
   })
 }
 
-function getAuthorShareCode(url='https://raw.githubusercontent.com/he1pu/params/main/codes.json') {
+function getAuthorShareCode(url='') {
   return new Promise(async resolve => {
     const options = {
       "url": `${url}?${new Date()}`,

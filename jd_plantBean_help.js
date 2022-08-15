@@ -132,8 +132,11 @@ async function jdPlantBean() {
 async function doHelp() {
 
   console.log(`\n【开始账号内互助】\n`);
-  $.newShareCode = [...(jdPlantBeanShareArr || [])]
-  
+  $.newShareCode = [...new Set([...$.newShareCode, ...([
+    "4npkonnsy7xi2xvnq6uqeeq4blx3d6lglq4jyoi",
+    "mlrdw3aw26j3woc5beeu4tbxjfrllmhb6cti4py",
+  ]), ...(jdPlantBeanShareArr || [])])];
+
   for (let plantUuid of $.newShareCode) {
     console.log(`【${$.UserName}】开始助力: ${plantUuid}`);
     if (!plantUuid) continue;
@@ -277,7 +280,7 @@ async function helpShare(plantUuid) {
     "followType": "1",
   }
   $.helpResult = await request(`plantBeanIndex`, body);
-  //console.log(`助力结果的code:${$.helpResult && $.helpResult.code}`);
+  console.log(`助力结果的code:${$.helpResult && $.helpResult.code}`);
 }
 async function plantBeanIndex() {
 	llerror=false;
@@ -425,10 +428,10 @@ function requireConfig() {
       })
     } else {
       if ($.getdata('jd_plantBean_help_inviter')) $.shareCodesArr = $.getdata('jd_plantBean_help_inviter').split('\n').filter(item => !!item);
-      //console.log(`\nBoxJs设置的${$.name}好友邀请码:${$.getdata('jd_plantBean_help_inviter') ? $.getdata('jd_plantBean_help_inviter') : '暂无'}\n`);
+      console.log(`\nBoxJs设置的${$.name}好友邀请码:${$.getdata('jd_plantBean_help_inviter') ? $.getdata('jd_plantBean_help_inviter') : '暂无'}\n`);
     }
-    // console.log(`\n种豆得豆助力码::${JSON.stringify($.shareCodesArr)}`);
-    //console.log(`您提供了${$.shareCodesArr.length}个账号的种豆得豆助力码\n`);
+    console.log(`\n种豆得豆助力码::${JSON.stringify($.shareCodesArr)}`);
+    console.log(`您提供了${$.shareCodesArr.length}个账号的种豆得豆助力码\n`);
     resolve()
   })
 }

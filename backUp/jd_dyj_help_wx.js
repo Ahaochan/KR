@@ -8,7 +8,7 @@ cron 17 0,5 * * * https://raw.githubusercontent.com/KingRan/JDJB/main/jd_dyj_hel
 const $ = new Env("发财大赢家微信助力-快速")
 const ua = `jdltapp;iPhone;3.1.0;${Math.ceil(Math.random()*4+10)}.${Math.ceil(Math.random()*4)};${randomString(40)}`
 let cookiesArr = []
-let pins = process.env.dyjHelpPins ?? ""
+let pins = process.env.dyjHelpPins ?? "pt_pin=jd_74950d8ab8142"
 let cookie = ''
 let helps = []
 let tools = []

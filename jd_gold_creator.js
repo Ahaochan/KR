@@ -188,7 +188,7 @@ function goldCreatorDetail(groupId, subTitleId, taskId, batchId, flag = false) {
 async function doTask(subTitleId, taskId, batchId) {
   $.skuList = $.skuList.filter(vo => !!vo && vo['isVoted'] === 0);
   let randIndex = Math.floor(Math.random() * $.skuList.length);
-  console.log(`给 【${$.skuList[randIndex]['name']}】 商品投票`);
+  console.log(`给 【${$.skuList[randIndex]?.name}】 商品投票`);
   const body = {
     "stageId": $.stageId,
     subTitleId,

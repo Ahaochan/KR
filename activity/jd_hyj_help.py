@@ -202,8 +202,8 @@ def buildHeaders(ck):
         'Host': 'api.m.jd.com',
         'Connection': 'keep-alive',
         'User-Agent': userAgent(),
-        # 'Referer': f'https://wbbny.m.jd.com/babelDiy/Zeus/2vVU4E7JLH9gKYfLQ5EVW6eN2P7B/index.html?babelChannel=jdappsyfc&shareType=taskHelp&inviteId=ZXASTT028Z1_cl4-8INRW9rJrQH-3oUxd6t1GFjRWn6u7zB55awQ&mpin=&from=sc&lng=113&lat=23&sid=&un_area=',
-        'Referer': f'https://wbbny.m.jd.com/babelDiy/Zeus/2vVU4E7JLH9gKYfLQ5EVW6eN2P7B/index.html?babelChannel=jdappsyfc&shareType=taskHelp&inviteId=ZXASTT028Z1_cl4-8INRW9rJrQH-3oUxd6t1GFjRWn6u7zB55awQ&mpin=RnFsl2daPGGLzNTMDSugzOUmYgysBguS0mhHAIPkgjc&from=sc&lng=113.367454&lat=23.112787&sid=4d0c87024e75822e2940d31c251c1b0w&un_area=1_2901_55567_0',
+        # 'Referer': f'https://wbbny.m.jd.com/babelDiy/Zeus/2vVU4E7JLH9gKYfLQ5EVW6eN2P7B/index.html?babelChannel=jdappsyfc&shareType=taskHelp&inviteId=&mpin=&from=sc&lng=113&lat=23&sid=&un_area=',
+        'Referer': f'https://wbbny.m.jd.com/babelDiy/Zeus/2vVU4E7JLH9gKYfLQ5EVW6eN2P7B/index.html?babelChannel=jdappsyfc&shareType=taskHelp&inviteId=&mpin=RnFsl2daPGGLzNTMDSugzOUmYgysBguS0mhHAIPkgjc&from=sc&lng=113.367454&lat=23.112787&sid=4d0c87024e75822e2940d31c251c1b0w&un_area=1_2901_55567_0',
         'Accept-Language': 'zh-cn'
     }
     return headers
@@ -225,7 +225,7 @@ def getinviteId(ck):
         resp = requests.post(url=url, headers=buildHeaders(ck), data=body).json()
         return resp['data']['result']['inviteId']
     except:
-        return 'ZXASTT018v_53RR4Y9lHfIBub1AFjRWn6u7zB55awQ'
+        return ''
 
 # 获取任务list
 def travel_getTaskDetail(header):

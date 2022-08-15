@@ -42,8 +42,8 @@ const JD_API_HOST = 'https://api.m.jd.com/';
         }
     }
     if (msg.length) {
-        console.log('有消息,推送消息')
-        await notify.sendNotify($.name, msg.join('\n'))
+        console.log('有消息,推送消息' + msg)
+        // await notify.sendNotify($.name, msg.join('\n'))
     } else {
         console.error('无消息,推送错误')
         await notify.sendNotify($.name + '错误!!', "无消息可推送!!")

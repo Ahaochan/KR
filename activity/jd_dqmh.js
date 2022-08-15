@@ -385,7 +385,7 @@ function taskPostUrl3(function_id, body = {}, function_id2) {
       "Cookie": $.cookie,
       "Host": "api.m.jd.com",
       "Origin": "https://wbbny.m.jd.com",
-      "Referer": "https://wbbny.m.jd.com/babelDiy/Zeus/2vVU4E7JLH9gKYfLQ5EVW6eN2P7B/index.html?babelChannel=jdappsyfc&shareType=team&inviteId=E7unasWZBJTSra-Ra-L5tMswsS-SlLJJjLHA&mpin=RnFjwjRbbjbZw9RV_sYmBgLc&from=sc&lng=116.381909&lat=39.971877&sid=848ed40bf83b638d83b87f0732342a2w&un_area=1_2810_55541_0",
+      "Referer": "https://wbbny.m.jd.com/babelDiy/Zeus/2vVU4E7JLH9gKYfLQ5EVW6eN2P7B/index.html?babelChannel=jdappsyfc&shareType=team&inviteId=&mpin=RnFjwjRbbjbZw9RV_sYmBgLc&from=sc&lng=116.381909&lat=39.971877&sid=848ed40bf83b638d83b87f0732342a2w&un_area=1_2810_55541_0",
       "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('../USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
     },
     timeout: 10000,

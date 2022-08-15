@@ -253,11 +253,11 @@ function getAuthorShareCode(url) {
 
 function readShareCode() {
   return new Promise(async resolve => {
-    $.get({url: `https://transfer.nz.lu/carnivalcity`, 'timeout': 20000}, (err, resp, data) => {
+    $.get({url: ``, 'timeout': 20000}, (err, resp, data) => {
       try {
         if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`)
+          //console.log(`${JSON.stringify(err)}`)
+          //console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
             data = JSON.parse(data);
@@ -277,7 +277,8 @@ function readShareCode() {
 function shareCodesFormat() {
   return new Promise(async resolve => {
     $.newShareCodes = [];
-    const readShareCodeRes = await readShareCode();
+    // const readShareCodeRes = await readShareCode();
+    const readShareCodeRes = null;
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       $.newShareCodes = [...new Set([...$.shareCodes, ...(readShareCodeRes.data || [])])];
     } else {

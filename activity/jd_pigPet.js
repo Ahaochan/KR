@@ -27,7 +27,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let UA = $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
-let shareId = 'vLENq1IrJJAHtgSG42oVtQ'
+let shareId = "jeU8Mo8y7sWPS6-ZmvueGsAdoUJQ3Dik"
 $.shareCodes = [];
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -44,12 +44,12 @@ if ($.isNode()) {
     return;
   }
   if (process.env.PIGPETSHARECODE) {
-    shareId = process.env.PIGPETSHARECODE
+    // shareId = process.env.PIGPETSHARECODE
   } else{
-    let res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/KingRan/shareCodes@master/pigPet.json')
-    if (res){
-      shareId = res[Math.floor((Math.random() * res.length))];
-    }
+    // let res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/KingRan/shareCodes@master/pigPet.json')
+    // if (res){
+    //   shareId = res[Math.floor((Math.random() * res.length))];
+    // }
   }
   console.log(`\n添加：邀请新用户，大转盘助力，抢粮食\n修改：优化日志输出，自动喂食\n\n默认不抢粮食（成功机率小），需要的请添加变量JD_PIGPET_PK，值填true\n`);
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -73,7 +73,7 @@ if ($.isNode()) {
     }
   }
   console.log(`\n======开始大转盘助力======\n`);
-  $.helpId = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/KingRan/shareCodes@master/pig.json');
+  // $.helpId = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/KingRan/shareCodes@master/pig.json');
   $.shareCodes = [...$.shareCodes, ...($.helpId || [])]
   for (let j = 0; j < cookiesArr.length; j++) {
     cookie = cookiesArr[j];

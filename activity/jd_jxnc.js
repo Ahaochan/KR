@@ -320,7 +320,8 @@ async function jdJXNC() {
         if (next) {
           while ($.helpNum < $.maxHelpNum) {
             $.helpNum++;
-            assistUserShareCodeJson = await getAssistUser();
+            // assistUserShareCodeJson = await getAssistUser();
+            assistUserShareCodeJson = null;
             if (assistUserShareCodeJson) {
               await $.wait(500);
               next = await helpShareCode(assistUserShareCodeJson['smp'], assistUserShareCodeJson['active'], assistUserShareCodeJson['joinnum']);
@@ -532,13 +533,13 @@ function getAssistUser() {
         try {
           const {code, data: {value, extra = {}} = {}} = JSON.parse(_data);
           if (value && extra.active) { //  && extra.joinnum 截止 2021-01-22 16:39:09 API 线上还未部署新的 joinnum 参数代码，暂时默认 1 兼容
-            let shareCodeJson = {
-              'smp': value,
-              'active': extra.active,
-              'joinnum': extra.joinnum || 1
-            };
-            $.log(`获取随机助力码成功 ` + JSON.stringify(shareCodeJson));
-            resolve(shareCodeJson);
+            // let shareCodeJson = {
+            //   'smp': value,
+            //   'active': extra.active,
+            //   'joinnum': extra.joinnum || 1
+            // };
+            // $.log(`获取随机助力码成功 ` + JSON.stringify(shareCodeJson));
+            // resolve(shareCodeJson);
             return;
           } else {
             $.log(`获取随机助力码失败 ${code}`);
