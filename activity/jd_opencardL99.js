@@ -50,7 +50,7 @@ if ($.isNode()) {
   authorCodeList = await getAuthorCodeList('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/opencard99.json')
   if ($.getAuthorCodeListerr === false) {
       authorCodeList = [
-          'ee9c70d1abca4b1ab21ec1ed0a51dcb9',
+          '705a5e7cd0de401cb696d09e7b75a74f',
       ]
   }
     for (let i = 0; i < cookiesArr.length; i++) {
@@ -74,7 +74,7 @@ if ($.isNode()) {
             $.bean = 0;
             $.ADID = getUUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 1);
             $.UUID = getUUID("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-            $.authorCode = ownCode ? ownCode : authorCodeList[random(0, authorCodeList.length)]
+            $.authorCode = '705a5e7cd0de401cb696d09e7b75a74f'
             $.authorNum = `${random(1000000, 9999999)}`;
             $.randomCode = random(1000000, 9999999);
             $.activityId = "dz1a8e2d544da69c0cfc0ef18187ba";

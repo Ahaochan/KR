@@ -7,7 +7,7 @@
 第一个CK失效会退出脚本
 
 ————————————————
-入口：[ 2.28-3.8 大牌会员日 (https://lzdz1-isv.isvjcloud.com/dingzhi/bigname/memberday/activity?activityId=dz3eb0e16893aa4f7a91d103a6db0b&shareUuid=0bb80b1737404f1ba5ed7de596f960b4)]
+入口：[ 2.28-3.8 大牌会员日 (https://lzdz1-isv.isvjcloud.com/dingzhi/bigname/memberday/activity?activityId=dz3eb0e16893aa4f7a91d103a6db0b&shareUuid=655138c86abd44c8b7186092d595b60c)]
 
 请求太频繁会被黑ip
 过10分钟再执行
@@ -52,13 +52,7 @@ let activityCookie =''
     return;
   }
   $.activityId = "dz3eb0e16893aa4f7a91d103a6db0b"
-  authorCodeList = await getAuthorCodeList('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/opencard84.json')
-    if(authorCodeList === '404: Not Found'){
-        authorCodeList = [
-            '0bb80b1737404f1ba5ed7de596f960b4',
-        ]
-    }
-  $.shareUuid = authorCodeList[Math.floor((Math.random() * authorCodeList.length))]
+  $.shareUuid = '655138c86abd44c8b7186092d595b60c'
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/bigname/memberday/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];

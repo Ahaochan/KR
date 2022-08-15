@@ -6,7 +6,7 @@
 第一个CK失效会退出脚本
 
 ————————————————
-入口：[ 2.18-2.28 联合关注 (https://lzdz-isv.isvjcloud.com/welfare/unite/activity?activityId=1eca438e9a484de0960115fc7088a7c6&shareUuid=05ee99c9babc4cb6a8132d3383d26f69)]
+入口：[ 2.18-2.28 联合关注 (https://lzdz-isv.isvjcloud.com/welfare/unite/activity?activityId=1eca438e9a484de0960115fc7088a7c6&shareUuid=)]
 
 请求太频繁会被黑ip
 过10分钟再执行
@@ -50,7 +50,7 @@ let activityCookie =''
     return;
   }
   $.activityId = "4e54fef7014a4651bdad42ec33a51816"
-  $.shareUuid = "05ee99c9babc4cb6a8132d3383d26f69"
+  $.shareUuid = ""
   $.venderIds = "1000398820"
   console.log(`入口:\nhttps://lzdz-isv.isvjcloud.com/welfare/unite/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
   for (let i = 0; i < cookiesArr.length; i++) {

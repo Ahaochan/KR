@@ -47,7 +47,7 @@ let nowTime = new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*
     return;
   }
   $.activityId = "uniongame20220303molpd624p"
-  $.shareUuid = "3b788d340bdd45e995df67f78343f747"
+  $.shareUuid = "17f5da7feae44e9b8931983c909311ef"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];

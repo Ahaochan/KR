@@ -22,7 +22,7 @@ const $ = new Env("7.25-7.31 盛夏派对 为爱而惠");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
 const notify = $.isNode() ? require("./sendNotify") : "";
 let cookiesArr = [], cookie = "", message = "";
-let ownCode = null;
+let ownCode = '6a041f5f239242d7a5f7528546f473e6';
 let authorCodeList = [];
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -72,9 +72,9 @@ if ($.isNode()) {
       $.ADID = getUUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 1);
       $.UUID = getUUID("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
       authorCodeList = [
-        '0cf47a7742bc4a238ab92997c4cb8489',
-        '5c1797dee97641179a50ad7a3ba5c80b',
-        '152cfa8a8a634ed39cb4680a3387d023',
+        '6a041f5f239242d7a5f7528546f473e6',
+        '6a041f5f239242d7a5f7528546f473e6',
+        '6a041f5f239242d7a5f7528546f473e6',
       ];
       // $.authorCode = authorCodeList[random(0, authorCodeList.length)];
       $.authorCode = ownCode ? ownCode : authorCodeList[random(0, authorCodeList.length)]

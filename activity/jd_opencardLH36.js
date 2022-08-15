@@ -60,7 +60,7 @@ let activityCookie =''
   $.userId = '10299171'
   $.actId = '82243a5746d04_1220'
   $.MixNicks = ''
-  $.inviteNick = 'k1Nobb+P0er+C2sysxnx/P2KELO9izRVpwCyqu0eqVZ5aW7RHzlMobrzJ/e9r/uf'
+  $.inviteNick = ''
   console.log(`活动地址:https://3.cn/103-Mi73p`)
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];

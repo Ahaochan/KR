@@ -23,7 +23,7 @@ print = partial(print, flush=True)
 activatyname = '邀请赢大礼'
 activityId = os.environ["yhyactivityId"]   # 活动类型
 authorCode = os.environ["yhyauthorCode"] # 活动id
-invitePin = os.environ["yhypin"] # pin 填写cookie后面的pin
+invitePin = 'jd_74950d8ab8142' # pin 填写cookie后面的pin
 activityUrl = f'https://prodev.m.jd.com/mall/active/{activityId}/index.html?code={authorCode}&invitePin={invitePin}'
 
 # 随机ua

@@ -53,13 +53,7 @@ let cookies = []
   }
   
   $.activityId = "dz46b2dbbde1914438a47a994cc11c"
-  authorCodeList = await getAuthorCodeList('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/opencard100.json')
-    if(authorCodeList === '404: Not Found'){
-        authorCodeList = [
-            '834105c76cb745b3b6153b4b39f42c42',
-        ]
-    }
-  $.shareUuid = authorCodeList[Math.floor((Math.random() * authorCodeList.length))]
+  $.shareUuid = '7a3bb348a1bd4c1288e42c78ca2f8286'
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/drinkcategory/piecetoge1/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
 
   for (let i = 0; i < cookiesArr.length; i++) {

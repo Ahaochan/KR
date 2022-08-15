@@ -14,8 +14,8 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
-let yqm = '';
-let zdtx = false //设置为true自动抢提现100
+let yqm = 'a/fSaJuRc+ulhEjjZkg0/HYLpx9c3gFunuV0DwcSN7Y=';
+let zdtx = true //设置为true自动抢提现100
 if (process.env.yqm) {
   yqm = process.env.yqm;
 }

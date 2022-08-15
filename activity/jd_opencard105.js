@@ -13,7 +13,7 @@
 第一个CK失效会退出脚本
 
 ————————————————
-入口：[ 1.6~1.20 山海之巅，冲刺大牌盲盒 (https://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/index/activity?activityId=dz220106100001616201Union&shareUuid=18510cf80be44e718d86e90cf0dc9241)]
+入口：[ 1.6~1.20 山海之巅，冲刺大牌盲盒 (https://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/index/activity?activityId=dz220106100001616201Union&shareUuid=3d6f418fcfb247c882e8b3b084e035c0)]
 请求太频繁会被黑ip
 过10分钟再执行
 
@@ -53,9 +53,9 @@ let activityCookie =''
     return;
   }
   $.activityId = "dz220106100001616201Union"
-  $.shareUuid = "18510cf80be44e718d86e90cf0dc9241"
+  $.shareUuid = "3d6f418fcfb247c882e8b3b084e035c0"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/index/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
-  let shareUuidArr = [$.shareUuid,"18510cf80be44e718d86e90cf0dc9241","1160ce40cedd40c7bd62d702f8e300a8","a95818413b514ae4b2ac3872894c999d"]
+  let shareUuidArr = [$.shareUuid]
   let s = Math.floor((Math.random()*10))
   let n = 0
   if(s == 1) n = Math.floor((Math.random()*shareUuidArr.length))

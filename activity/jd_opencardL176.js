@@ -46,9 +46,9 @@ if ($.isNode()) {
     }
 		console.log("入口:https://lzdz1-isv.isvjcloud.com/dingzhi/may/brandUnion/activity?activityId=dz96fb80e34caa9b51b95b0836967f");
     authorCodeList = [
-				'e682badd53284eb08ea1bb2356dc7b68',
-				'c77f35c3c7bb4b7fa0e95af26e16b91c',
-				'034df84ea6d842f19056d27a628a61d7',
+				'cd2485b349b34d1bbb81fc6569ae130a',
+				'cd2485b349b34d1bbb81fc6569ae130a',
+				'cd2485b349b34d1bbb81fc6569ae130a',
     ]
     for (let i = 0; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {

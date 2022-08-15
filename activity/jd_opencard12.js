@@ -37,12 +37,12 @@ if (process.env.NO_RUSH && process.env.NO_RUSH != "") {
         return;
     }
     
-    authorCodeList = await getAuthorCodeList('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/opencard12.json')
-    if(authorCodeList === '404: Not Found'){
-        authorCodeList = [
-            '814d73647bdd4da5a6ba4904ec20de7f',
-        ]
-    }
+    // authorCodeList = await getAuthorCodeList('')
+    // if(authorCodeList === '404: Not Found'){
+    //     authorCodeList = [
+    //     ]
+    // }
+    authorCodeList = [];
 
     for (let i = 0; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {

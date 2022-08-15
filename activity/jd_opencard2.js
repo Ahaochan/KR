@@ -30,12 +30,12 @@ if ($.isNode()) {
         return;
     }
     
-    authorCodeList = await getAuthorCodeList('https://gitee.com/fatelight/dongge/raw/master/dongge/lzdz1_dapai.json11')
-    if(authorCodeList === '404: Not Found'){
-        authorCodeList = [
-            '52e625399b1b40f9abaecccdbdc58e75',
-        ]
-    }
+    // authorCodeList = await getAuthorCodeList('')
+    // if(authorCodeList === '404: Not Found'){
+    //     authorCodeList = [
+    //     ]
+    // }
+    authorCodeList = [];
 
     for (let i = 0; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {

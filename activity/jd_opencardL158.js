@@ -49,9 +49,9 @@ let authorCodeList = []
     return;
   }
   $.activityId = "dz730c272a4834c1d8fd2e295a008e"
-  $.shareUuid = "c604016865c2475ba704e6deeea38306"
+  $.shareUuid = "387a27b9948541ae93a8b23f03840902"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
-  let shareUuidArr = ["c604016865c2475ba704e6deeea38306","a115b8a8bca64d8790d854bc6f55c2ff","b21def444f334d5ca8d459998394642b"]
+  let shareUuidArr = ["387a27b9948541ae93a8b23f03840902","387a27b9948541ae93a8b23f03840902","387a27b9948541ae93a8b23f03840902"]
   let s = Math.floor((Math.random()*3))
   let n = 0
   n = Math.floor((Math.random()*shareUuidArr.length))

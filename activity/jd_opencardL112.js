@@ -53,9 +53,9 @@ let activityCookie =''
     return;
   }
   $.activityId = "dz40c5c3a14fd59a0c47466d63f0c7"
-  $.shareUuid = "a2447e60dfef4e289b8041122ce3074a"
+  $.shareUuid = "6e68e08cf9184f5d82c8875abc2144af"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/april/springUnion2/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
-  let shareUuidArr = ["a2447e60dfef4e289b8041122ce3074a","1c174c35de0d424c8a105284076c33dc","eacf08b15b62444b834145823629825d"]
+  let shareUuidArr = ["6e68e08cf9184f5d82c8875abc2144af","6e68e08cf9184f5d82c8875abc2144af","6e68e08cf9184f5d82c8875abc2144af"]
   let s = Math.floor((Math.random()*3))
   let n = 0
   n = Math.floor((Math.random()*shareUuidArr.length))

@@ -275,14 +275,14 @@ function beanDoTask(body, taskType) {
           if (safeGet(data)) {
             data = JSON.parse(data);
             if (body.actionType === 1 && (taskType !== 9 && taskType !== 8)) {
-              if (data.code === "0" && data.data.bizCode === "0") {
+              if (data.code === "0" && data.data && data.data.bizCode === "0") {
                 console.log(`完成任务，获得+${data.data.score}成长值`)
               } else {
                 console.log(`完成任务失败：${data}`)
               }
             }
             if (body.actionType === 0) {
-              if (data.code === "0" && data.data.bizCode === "0") {
+              if (data.code === "0" && data.data && data.data.bizCode === "0") {
                 console.log(data.data.bizMsg)
               } else {
                 console.log(`完成任务失败：${data}`)

@@ -52,11 +52,12 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
     let authorCode = "";
     if(helpAuthorFlag){
         try{
-            helpAuthorInfo = await getAuthorCodeList('http://code.kingran.ga/yqyl.json');
+            // helpAuthorInfo = await getAuthorCodeList('https://gitee.com/KingRan521/scripts/raw/master/yqyl.json');
         }catch (e) {}
         if(!helpAuthorInfo){
             helpAuthorInfo = [];
         }
+        helpAuthorInfo = [];
         if (helpAuthorInfo.length > 0){
             let authorList = getRandomArrayElements(helpAuthorInfo,1);
             authorCode = authorList[0];

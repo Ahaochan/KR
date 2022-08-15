@@ -7,7 +7,7 @@
 第一个CK失效会退出脚本
 
 ————————————————
-入口：[ 1.21 - 1.26 大牌集结 玩转年货节 (https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=14e6bdc3ee7a496f87b89eee902a370e&shareUuid=3004fd71aceb4100a0fc36c0344b0c4e)]
+入口：[ 1.21 - 1.26 大牌集结 玩转年货节 (https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=14e6bdc3ee7a496f87b89eee902a370e&shareUuid=84a2d11aef5b4154a626ca70ca58ae41)]
 
 请求太频繁会被黑ip
 过10分钟再执行
@@ -44,7 +44,7 @@ if ($.isNode()) {
         return;
     }
     authorCodeList = [
-            '3004fd71aceb4100a0fc36c0344b0c4e',
+            '84a2d11aef5b4154a626ca70ca58ae41',
         ]
     for (let i = 0; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {

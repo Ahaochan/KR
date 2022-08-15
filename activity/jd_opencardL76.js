@@ -3,7 +3,7 @@
 新增开卡脚本,一次性脚本
 
 ————————————————
-入口：[ 2.19-2.26 奢宠会员 瓜分百万京豆 (https://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=unionkbblnt20220218dzlhkk&shareUuid=48636db9b45f483f870865b682800797)]
+入口：[ 2.19-2.26 奢宠会员 瓜分百万京豆 (https://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=unionkbblnt20220218dzlhkk&shareUuid=f360e38d438f453582c889dbeb5b2769)]
 
 
 cron:30 2,15 19-26 2 *
@@ -41,7 +41,7 @@ let activityCookie =''
     return;
   }
   $.activityId = "unionkbblnt20220218dzlhkk"
-  $.shareUuid = "48636db9b45f483f870865b682800797"
+  $.shareUuid = "f360e38d438f453582c889dbeb5b2769"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];

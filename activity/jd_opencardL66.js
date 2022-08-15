@@ -7,7 +7,7 @@
 第一个CK失效会退出脚本
 
 ————————————————
-入口：[ 1.29~2.15 京东粉丝联盟福利社 入会赢专享好礼 (https://lzdz1-isv.isvjcloud.com/dingzhi/shop/league/activity?activityId=dz220107100001616201shop&shareUuid=488be07602b444ba9b2b4825aec09d81)]
+入口：[ 1.29~2.15 京东粉丝联盟福利社 入会赢专享好礼 (https://lzdz1-isv.isvjcloud.com/dingzhi/shop/league/activity?activityId=dz220107100001616201shop&shareUuid=9a407fcc187442bbb61af5e4caf9bdd5)]
 
 请求太频繁会被黑ip
 过10分钟再执行
@@ -49,7 +49,7 @@ let activityCookie =''
     return;
   }
   $.activityId = "dz220208100001616201shop"
-  $.shareUuid = "488be07602b444ba9b2b4825aec09d81"
+  $.shareUuid = "9a407fcc187442bbb61af5e4caf9bdd5"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/shop/league/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
 
   for (let i = 0; i < cookiesArr.length; i++) {

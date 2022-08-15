@@ -3,7 +3,7 @@
 新增开卡脚本，一次性脚本
 
 
-入口：[ 2.11~2.22 遇见爱 遇见你 (https://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=qrj20220211udn6m4p8pqh7lc2&shareUuid=7d629ef8f20c4136a2c1d28c8d2226e6)]
+入口：[ 2.11~2.22 遇见爱 遇见你 (https://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=qrj20220211udn6m4p8pqh7lc2&shareUuid=e0f3bba4fcef4fbfbb8f9fffc2126b69)]
 
 请求太频繁会被黑ip
 过10分钟再执行
@@ -45,7 +45,7 @@ let nowTime = new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*
     return;
   }
   $.activityId = "qrj20220211udn6m4p8pqh7lc2"
-  $.shareUuid = "7d629ef8f20c4136a2c1d28c8d2226e6"
+  $.shareUuid = "e0f3bba4fcef4fbfbb8f9fffc2126b69"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];

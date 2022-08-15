@@ -18,7 +18,7 @@ const $ = new Env("7.30-8.4 惊喜派送 纵享甜蜜");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
-let ownCode = null;
+let ownCode = '52bcb0da930f4942ab488d8f305db633';
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
         cookiesArr.push(jdCookieNode[item])
@@ -61,9 +61,9 @@ if ($.isNode()) {
             $.ADID = getUUID('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 1);
             $.UUID = getUUID('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
             authorCodeList = [
-                '8db0bfac2875446ca93fbfa49ae3b8ed',
-                'd97ee3e82b28409a9b40db7b715938f5',
-                '770cd3db497a4ef5ad595993d27ee2e2',
+                '52bcb0da930f4942ab488d8f305db633',
+                '52bcb0da930f4942ab488d8f305db633',
+                '52bcb0da930f4942ab488d8f305db633',
             ]
             // $.authorCode = authorCodeList[random(0, authorCodeList.length)]
             $.authorCode = ownCode ? ownCode : authorCodeList[random(0, authorCodeList.length)]

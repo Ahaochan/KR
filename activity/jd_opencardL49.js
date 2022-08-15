@@ -51,9 +51,9 @@ let activityCookie =''
     return;
   }
   $.activityId = "dz2201100000356801"
-  $.shareUuid = "7c19ea8bacf74fbf83a87b6897a0002d"
+  $.shareUuid = "f3e18c540c85452fac1b9ede18c236a8"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/flyCrane/collect/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
-  let shareUuidArr = [$.shareUuid,"82609696607c46878da51772cecb7a21","450e6b0af93541c39b489a0a7c920e5d"]
+  let shareUuidArr = [$.shareUuid]
   let s = Math.floor((Math.random()*10))
   let n = 0
   if(s >= 1 && s<= 3) n = Math.floor((Math.random()*shareUuidArr.length))
